@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script src="lang.js"></script>
+</head>
+<body>
+
+<h2 lno="0" >This is a Heading</h2>
+<p lno="1">This is a paragraph.</p>
+
+<form action="/action_page.php">
+  <fieldset>
+    <legend lno="2">Personal information:</legend>
+    <span lno="3">First name</span>:<br>
+    <input lno="3" type="text" name="firstname" title="First Name" placeholder="First Name" value="Mickey">
+    <br>
+    <span lno="4">Last name</span>:<br>
+    <input lno="4" type="text" name="lastname" title="Last Name" placeholder="Last Name" value="Mouse">
+    <br/>
+    <img lno="5" alt="image File" title="image File" />
+    <br><br>
+    <button lno="6" type="submit">Submit</button>
+  </fieldset>
+</form>
+
+
+<input type="button" value="English" onclick="langChange(this,0);"/>
+<input type="button" value="বাংলা" onclick="langChange(this,1);"/>
+<input type="button" value="हिंदी" onclick="langChange(this,2);"/>
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+var prelangBtn = null;
+function langChange(e,n){
+	if(prelangBtn!=null) prelangBtn.disabled = false;
+	prelangBtn = e;
+	prelangBtn.disabled = true;
+	setLang(n); // The Method to change language
+}
+</script>
